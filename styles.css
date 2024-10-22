@@ -1,0 +1,53 @@
+/* Base styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #AAAAAA
+}
+
+main {
+    padding: 20px;
+    margin-top: 80px;
+}
+
+/* Banner styling */
+header#banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: black;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+header#banner nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header#banner nav ul li {
+    margin: 0 15px;
+}
+
+header#banner nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 10px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+header#banner nav ul li a:hover {
+    color: #89FF76; 
+}
+
+.small-banner {
+    padding: 5px 0;
+}
+
