@@ -51,3 +51,15 @@ header#banner nav ul li a:hover {
     padding: 5px 0;
 }
 
+#box1{
+    position: fixed;
+    margin: 150px 0 0 250px;
+    background-color: #9DC183;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 80%;
+}
+.heading {
+    padding-left: 10px;
+    font-size: 50px;    
+}
