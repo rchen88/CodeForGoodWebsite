@@ -51,15 +51,41 @@ header#banner nav ul li a:hover {
     padding: 5px 0;
 }
 
-#box1{
-    position: fixed;
-    margin: 150px 0 0 250px;
-    background-color: #9DC183;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 80%;
+.container {
+    height: 100vh;
+    background-color: #2E6F40;
+    padding: 20px;
+    max-width:L 600px;
+    width: 75%;
+    margin: 20px auto;
+    margin-top: 80px;
 }
 .heading {
-    padding-left: 10px;
-    font-size: 50px;    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 35px;    
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+    padding-left: 10%;
+    padding-top: 9%;
 }
+.mission{
+    display: flex;
+    justify-content: space-between;
+}
+.mission-container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 30%;
+    padding-left: 10%;
+    color: white;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: justify;
+}
+.image{
+    margin-top: -80px;
+    align-items: left;
+    width: 250px;
+    height: 250px;
+    padding-right: 100px;
+}
+
