@@ -7,6 +7,12 @@
 :root {
     --bg: #2E6F40;
     --fg: #EEEEEE;
+
+    --descr: #eee;
+    --image: #33f;
+
+    /* from INSTRUCTIONS */
+    --palette-1: #89ff76;
 }
 
 .root {
@@ -14,7 +20,13 @@
         "Calibri", "Trebuchet MS", sans-serif;
     width: 75%;
     margin: 5em auto; /* magic constant for position:fixed */
-    h1, h2 { margin: 0; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 2.4em; }
+    h2 { font-size: 1.8em; }
+    /* use a different box model for every child element
+     * from here on. this is so i don't have to say
+     * <width> = <actual-width> - <2*padding> */
+    * { box-sizing: border-box; }
 }
 
 .intro {
@@ -24,6 +36,57 @@
 
     * { text-align: center; }
 
-    .title    { font-size: 3em; }
-    .subtitle { font-size: 1.2em; }
+    .title    { font-weight: bold; font-size: 3em; }
+    .subtitle { font-weight: bold; font-size: 1.2em; }
 }
+
+.flashy {
+    display: flex;
+    /*
+     * so uh stack these side by side:
+     *
+     *      |
+     *      |                        +- image --------+    \
+     *      |  +- descr --------+    |  @@@@@@@@@@@@  |     |
+     *  cross  | == Title ==    |    |  @@@@@@@@@@@@  |     | ... align these
+     *      +-------- main -------->-------- axis ------->  | guys, in the
+     *   axis  | text text ...  |    |  @@@@@@@@@@@@  |     | event we have
+     *      |  +----------------+    |  @@@@@@@@@@@@  +     | less text/image
+     *      |                   `    +----------------+     |
+     *      v                    \  /'                     /
+     *                            \/
+     *        use space-between to lazily spread this thing
+     *    b/c i don't want to (and probably can't) do math in CSS
+     *
+     */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .image-box { background-color: var(--image); min-width: 40%; min-height: 6em; }
+    .descr-box { background-color: var(--descr); min-width: 56%; min-height: 4em; }
+    .form-descr-box { background-color: var(--descr); min-width: 46%; min-height: 4em; }
+    .form-box { background-color: var(--palette-1); min-width: 50%; min-height: 4em; }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: start; /* left alignment */
+        gap: 2em; /* space between rows */
+
+        .row { display: flex; flex-direction: row; gap: 0.5em; }
+        .full .row { min-width: 100%; }
+        .field { display: flex; flex-direction: column; }
+
+        label { /* no style */ }
+        input[type=text] { /* no style */ }
+        input[type=button] { /* no style */ }
+        textarea { max-width: 100%; resize: vertical; }
+    }
+
+    .image-box, .descr-box, .form-box, .form-descr-box { padding: 2em; }
+}
+
+/* reap the sweet sweet berries of margin collapse... >:] */
+.intro, .flashy { margin: 2em 0; }
