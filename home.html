@@ -6,10 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CodeForGood</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
     <div id="banner-container"></div>
+    <div class="root">
+        <div class="intro">
+            <h1 class="title">
+                CodeForGood
+            </h1>
+            <p class="subtitle">
+                A student organization that is pretty cool :)
+            </p>
+        </div>
+
+        <div class="flashy">
+            <div class="descr-box">
+                <h2>This is what we do</h2>
+                <p>
+<!-- Instead of Lorem ipsum, let's have something fun :) -->
+            <em>  A lonely pond in age-old stillness sleeps &hellip;
+            <br>    Apart, unstirred by sound or motion &hellip; till
+            <br>    Suddenly! into it a lithe frog leaps.
+            </em> <!--
+Basho's haiku, into iambic pentameter!
+     ... by Curtis Hidden Page:
+     https://www.bopsecrets.org/gateway/passages/basho-frog.htm
+-->             </p>
+                <p>[read more about us in <a href="about.html">About</a>]</p>
+            </div>
+            <div class="image-box">
+                <p style="color:#eee;">[fancy.png]</p>
+            </div>
+        </div>
+
+        <div class="flashy">
+            <div class="form-box"><form action="home.html" method="GET">
+                <div class="row">
+                    <div class="field">
+                        <label>Who are you?????</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="field">
+                        <label>OK!!!! and ur electronic mail???</label>
+                        <input type="text" name="mail">
+                    </div>
+                </div>
+                <div class="full row">
+                    <div class="field">
+                        <label>LAST QUESTION! before you [REDACTED], what do you think of life???</label>
+                        <textarea rows="4" cols="76" name="etc"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit">SUBMIT!!!</button>
+                </div>
+            </form></div>
+            <div class="form-descr-box">
+                <h2>Fun things to do</h2>
+                <p>Contact / subscribe to / detonate us</p>
+                <p>:))))))))))))))))))))</p>
+                <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<!--
+-->&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
+            </div>
+
+            <!-- Realistically, we (the client) will not be the one
+                 handling the ultimate submission (it might not
+                 even be sent to this route).  This exists only as
+                 a proof of concept that this form works, it can send
+                 data... but for now it just appends the parameters
+                 to the request URI of our same silly GET request. -->
+            <script type="text/javascript">
+                let query = window.location.search;
+                if (query.charAt(0) === '?') {
+                    /* don't judge me for using String.prototype.substring...
+                        I'm from Javaland, and I'm more used to it than slice :,) */
+                    let params = query.substring(1).split('&');
+                    let paramstr = '';
+                    for (let i = 0; i < params.length; ++i) {
+                        let fields = params[i].split('=');
+                        paramstr += fields[0];
+                        paramstr += ': ';
+                        paramstr += decodeURIComponent(fields[1]).replaceAll('+', ' ');
+                        paramstr += "\n";
+                    }
+                    window.alert("Hey, I got your form submission!\n"
+                        + "Here's what you sent to me:\n\n"
+                        + paramstr + "\n"
+                        + "Note that all of this information comes from "
+                        + "the query string of your request URI.  To stop this "
+                        + "pop-up from showing up, delete it from your URI."
+                    );
+                }
+            </script>
+        </div>
+    </div>
 
     <script>
         // Load header.html content into the banner-container div
